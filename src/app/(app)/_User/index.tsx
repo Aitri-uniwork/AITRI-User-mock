@@ -6,6 +6,7 @@ import Card from "./_Card";
 import BottomNavigation from "./_BottomNavigation";
 import { Grid2 as Grid } from "@mui/material";
 import data from "@/data.json";
+
 const styles = {
     container: {
         bgcolor: "black",
