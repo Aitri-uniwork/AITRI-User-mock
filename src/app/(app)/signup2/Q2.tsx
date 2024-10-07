@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { Typography, Box, Button, ButtonProps } from '@mui/material';
-import { styled } from '@mui/system';
+// import { styled } from '@mui/syste';
+import styled from '@emotion/styled';
 
 type QuestionProps = {
   label: string;
@@ -12,7 +13,7 @@ type QuestionProps = {
 };
 
 // スタイルをカスタマイズしたボタン
-const RoundButton = styled(Button)<ButtonProps>({
+const RoundButton: React.FC<ButtonProps> = styled(Button)<ButtonProps>({
   borderRadius: '50%',
   minWidth: '40px',
   minHeight: '40px',
@@ -21,14 +22,21 @@ const RoundButton = styled(Button)<ButtonProps>({
   lineHeight: '40px',
 });
 
-const Line = styled('div')({
+const Line = styled.div`
   flexGrow: 1,
   height: '2px',
   backgroundColor: '#ccc',
   alignSelf: 'center',
-});
+`;
 
-const Questionnaire = ({ label, min, max, index }: QuestionProps) => {
+// const Line: React.FC<BoxProps> = styled(Box)<BoxProps>({
+//   flexGrow: 1,
+//   height: '2px',
+//   backgroundColor: '#ccc',
+//   alignSelf: 'center',
+// });
+
+const Questionnaire = ({ label, min, max }: QuestionProps) => {
   const [activeValue, setActiveValue] = React.useState<number | null>(null);
 
   const handleButtonClick = (value: number) => {
