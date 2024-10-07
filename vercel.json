@@ -4,6 +4,5 @@
         "src": "next.config.js",
         "use": "@vercel/next"
       }
-    ],
-    "buildCommand": "npm run build --ignore-errors"
+    ]
 }
